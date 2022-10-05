@@ -4,11 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap" rel="stylesheet">   
     <link rel="stylesheet" href="styles.css">
+    <style>
+        #question,button{
+            font-family: 'Roboto', sans-serif;
+        }
+        #context-box{
+            background-image: linear-gradient(to right, #fc4a1a  , #f7b733   );
+        }
+       
+    </style>
     <title>Multiplication-Game</title>
 </head>
 <body>
-    <h1>hii</h1>
+    <div class="">
+        <!-- content div -->
+        <div id="context-box" class="flex flex-col w-96 border-4 ml-auto mr-auto mt-28 " >
+            <div id="score" class=" ml-auto  mr-2"><span class="">score:0</span></div>
+            <div id="question" class="ml-auto mr-auto mt-2"><span class="question text-2xl font-bold">what is 5 multiply by 1 ?</span></div>
+            <div id="input-area" class="ml-auto mr-auto mt-2"><input class="border text-center" type="text"></div>
+            <button class="ml-auto mr-auto  mt-2 mb-4 px-2 bg-white" >SUBMIT</button>
+        </div>
+    </div>
 
     <!-- npx tailwindcss -i src/tailwind.css -o ./styles.css --watch -->
 </body>
