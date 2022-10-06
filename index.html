@@ -7,11 +7,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap" rel="stylesheet">   
     <link rel="stylesheet" href="styles.css">
     <style>
-        #question,button{
+        /* Chrome, Safari, Edge, Opera */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+}
+        #question{
             font-family: 'Roboto', sans-serif;
         }
+    
         #context-box{
-            background-image: linear-gradient(to right, #fc4a1a  , #f7b733   );
+            /* background-color: #9fa8da; */
+            background-color: #FFE57F;
+        }
+        .result,button{
+            /* background-color: #FF80AB; */
+            background-color: #EF5350;
+        }
+        body{
+            /* background-color: #222; */
         }
        
     </style>
@@ -20,14 +35,52 @@
 <body>
     <div class="">
         <!-- content div -->
-        <div id="context-box" class="flex flex-col w-96 border-4 ml-auto mr-auto mt-28 " >
-            <div id="score" class=" ml-auto  mr-2"><span class="">score:0</span></div>
-            <div id="question" class="ml-auto mr-auto mt-2"><span class="question text-2xl font-bold">what is 5 multiply by 1 ?</span></div>
-            <div id="input-area" class="ml-auto mr-auto mt-2"><input class="border text-center" type="text"></div>
-            <button class="ml-auto mr-auto  mt-2 mb-4 px-2 bg-white" >SUBMIT</button>
+        <div id="context-box" class="flex flex-col w-5/12 h-40  ml-auto mr-auto mt-28 rounded shadow-2xl" >
+            <div class="result text-center"><span id="result" class="text-white">HEY TRY THIS</span></div>
+            <div id="question" class="ml-auto mr-auto mt-4"><span class="question text-2xl font-bold">WHAT IS <span id="multi-left"> 5 </span> MULTIPLY BY <span id="multi-right">1</span> ?</span></div>
+            <div id="input-area" class="ml-auto mr-auto mt-2"><input placeholder="ENTER YOUR ANSWER" id="input-ans" class="border text-center px-4 rounded" type="number"></div>
+            <button id="submit" class="ml-auto mr-auto  mt-3 mb-4 px-2 bg-white shadow-xl rounded" onclick="submitEval()" >SUBMIT</button>
         </div>
     </div>
 
+    <script>
+        let leftVal = Math.floor((Math.random() * 10) + 1);
+        let rightVal = Math.floor((Math.random() * 10) + 1);
+        let submitVal = document.getElementById("input-ans");
+       
+        document.getElementById("multi-left").innerHTML = leftVal;
+        document.getElementById("multi-right").innerHTML = rightVal;
+  
+        function submitEval(){
+            let answer = leftVal * rightVal;
+            console.log(document.getElementById("input-ans").value);
+          if(document.getElementById("input-ans").value == answer){
+            document.getElementById("result").innerHTML = "well done!! Lets Try Again Bruh/Cutie....";
+        }
+        else{
+            document.getElementById("result").innerHTML = `Correct Answer is ${answer}.  Try Again Bruh/Cutie...`;
+        }
+
+        document.getElementById("input-ans").value = "";
+
+         leftVal = Math.floor((Math.random() * 10) + 1);
+         rightVal = Math.floor((Math.random() * 10) + 1);
+         submitVal = document.getElementById("input-ans");
+       
+        document.getElementById("multi-left").innerHTML = leftVal;
+        document.getElementById("multi-right").innerHTML = rightVal;
+  
+        }
+        
+
+
+
+
+        
+
+        
+
+    </script>
     <!-- npx tailwindcss -i src/tailwind.css -o ./styles.css --watch -->
 </body>
 </html>
