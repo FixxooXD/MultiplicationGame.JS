@@ -13,6 +13,22 @@
       -webkit-appearance: none;
       margin: 0;
 }
+@media only screen and (max-width: 340px) {
+        #context-box{
+          width:98%;
+        }
+     }
+     @media only screen and (max-width: 400px) {
+        #context-box{
+          width:90%;
+        }
+     }
+     @media only screen and (max-width: 700px) {
+        #context-box{
+          width:98%;
+        }
+     }
+
         #question{
             font-family: 'Roboto', sans-serif;
         }
@@ -55,7 +71,7 @@
             let answer = leftVal * rightVal;
             console.log(document.getElementById("input-ans").value);
           if(document.getElementById("input-ans").value == answer){
-            document.getElementById("result").innerHTML = "well done!! Lets Try Again Bruh/Cutie....";
+            document.getElementById("result").innerHTML = "well done!! Lets Try Again   Bruh/Cutie....";
         }
         else{
             document.getElementById("result").innerHTML = `Correct Answer is ${answer}.  Try Again Bruh/Cutie...`;
